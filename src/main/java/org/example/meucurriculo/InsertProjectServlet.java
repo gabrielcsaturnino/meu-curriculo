@@ -36,7 +36,7 @@ public class InsertProjectServlet extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
             }else {
                 projectService.saveProject(new Project(id, nome, descricao));
-                resp.sendRedirect(req.getContextPath());
+                resp.sendRedirect(req.getContextPath() + "/");
             }
         }else {
             resp.sendRedirect(req.getContextPath() + "/login.jsp");

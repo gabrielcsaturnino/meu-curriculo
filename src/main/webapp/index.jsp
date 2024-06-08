@@ -87,7 +87,7 @@
 
 <section id="contacts" class="py-5">
     <div class="col-lg-8 col-md-6">
-        <p><strong>Email:</strong> seuemail@example.com</p>
+        <p><strong>Email:</strong> email@example.com</p>
         <p><strong>Telefone:</strong> (00) 1234-5678</p>
         <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/seuperfil" target="_blank">linkedin.com/in/seuperfil</a></p>
     </div>
