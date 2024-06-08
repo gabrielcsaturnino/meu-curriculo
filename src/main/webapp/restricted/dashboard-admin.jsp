@@ -31,9 +31,9 @@
 
     <form action="/formApresentation" method="post">
         <input type="text" name="apresentacao" value="<%
-        HomePage homePage = new HomePageRepositoryImpl().getHomePage("homePage");
-        if(homePage!=null && homePage.getApresentacao()!=null){
-            out.print(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao());}
+        HomePageRepositoryImpl homePageRepositoryImpl = new HomePageRepositoryImpl();
+        if(homePageRepositoryImpl.getHomePage("homePage").getApresentacao()!=null){
+            out.print(homePageRepositoryImpl.getHomePage("homePage").getApresentacao());}
         else {
                 out.print("");
             }
