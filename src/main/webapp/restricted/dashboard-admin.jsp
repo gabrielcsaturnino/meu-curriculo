@@ -30,14 +30,18 @@
     </form>
 
     <form action="/formApresentation" method="post">
+        <%
+            HomePageRepositoryImpl homePageRepositoryImpl = new HomePageRepositoryImpl();
+            if(homePageRepositoryImpl.getHomePage("homePage")!=null){
+                String apresentacao = (homePageRepositoryImpl.getHomePage("homePage").getApresentacao());}
+            <input type="text" name="apresentacao" value="<%
+        out.print(apresentacao);%>">
+            else {
+                String apresentacao = "";
         <input type="text" name="apresentacao" value="<%
-        HomePageRepositoryImpl homePageRepositoryImpl = new HomePageRepositoryImpl();
-        if(homePageRepositoryImpl.getHomePage("homePage").getApresentacao()!=null){
-            out.print(homePageRepositoryImpl.getHomePage("homePage").getApresentacao());}
-        else {
-                out.print("");
-            }
-        %>">
+       out.print(apresentacao);%>">
+            }%>
+
         <button type="submit">Enviar</button>
     </form>
 
