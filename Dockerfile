@@ -1,3 +1,7 @@
+FROM maven:latest AS build
+WORKDIR /app
+COPY . /app
+RUN mvn clean package
 
 FROM tomcat:latest
 
