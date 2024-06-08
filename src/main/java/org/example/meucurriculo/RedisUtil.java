@@ -5,9 +5,9 @@ import redis.clients.jedis.Jedis;
 public class RedisUtil {
 
     public static Jedis getConnection() {
-        String redisHost = System.getenv("REDIS_HOST");
-        String redisPortString = System.getenv("REDIS_PORT");
-        String redisPassword = System.getenv("REDIS_PASSWORD");
+        String redisHost = System.getenv("REDISHOST");
+        String redisPortString = System.getenv("REDISPORT");
+        String redisPassword = System.getenv("REDISPASSWORD");
 
         if (redisHost == null || redisHost.isEmpty()) {
             throw new IllegalArgumentException("REDIS_HOST environment variable is not set.");
