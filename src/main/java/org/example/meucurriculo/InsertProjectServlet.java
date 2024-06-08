@@ -48,4 +48,9 @@ public class InsertProjectServlet extends HttpServlet {
 
 
     }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("ENTROU GET");
+        resp.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED, "GET method is not supported.");
+    }
 }
