@@ -22,7 +22,9 @@ public class InsertHomePageServlet extends HttpServlet {
             homePageService = new HomePageService();
             String apresentacao = req.getParameter("apresentacao");
             homePageService.saveHomePage(new HomePage(apresentacao));
-            resp.sendRedirect(req.getContextPath());
+            System.out.println(req.getContextPath());
+            resp.sendRedirect(req.getContextPath() + "/");
+
         }else{
             System.out.println("DEU PAU");
         }
