@@ -29,7 +29,13 @@
     </form>
 
     <form action="/formApresentation" method="post">
-        <input type="text" name="apresentacao" value="<%out.print(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao());%>">
+        <input type="text" name="apresentacao" value="<%
+        if(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao()!=null){
+            out.print(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao());}
+        else {
+                out.print("");
+            }
+        %>">
         <button type="submit">Enviar</button>
     </form>
 
