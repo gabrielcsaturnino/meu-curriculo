@@ -1,22 +1,14 @@
-<%@ page import="org.example.meucurriculo.services.HomePageService" %>
-<%@ page import="org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl" %>
-<%@ page import="org.example.meucurriculo.models.HomePage" %><%--
-  Created by IntelliJ IDEA.
-  User: gabriel
-  Date: 05/06/2024
-  Time: 13:53
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Title</title>
+    <meta charset="UTF-8">
 </head>
+
 <body>
 
     <h1>Inserir projeto</h1>
-    <form action="/insertProject" method="POST">
+    <form class="f" id="t" action="/insertProject" method="POST">
         <input type="text" name="nome">
         <input type="text" name="descricao">
         <button type="submit">Enviar</button>
@@ -29,7 +21,7 @@
         %>
     </form>
 
-    <form action="/formApresentation" method="POST">
+    <form class="f" id="tt" action="/formApresentation" method="POST">
         <input type="text" name="apresentacao">
         <button type="submit">Enviar</button>
     </form >
