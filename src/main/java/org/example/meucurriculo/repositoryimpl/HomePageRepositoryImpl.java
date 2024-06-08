@@ -25,8 +25,9 @@ public class HomePageRepositoryImpl implements HomePageRepository {
     public HomePage getHomePage(String id) {
 
         try (Jedis jedis = new RedisUtil().getConnection()){
+
             String homeJson = jedis.get(id);
-            if(homeJson != null) {
+            if(homeJson != "" || homeJson != null) {
                 return objMapper.readValue(homeJson, HomePage.class);
             }else {
                 objMapper.readValue(homeJson, HomePage.class).setApresentacao("Apresentacao");
