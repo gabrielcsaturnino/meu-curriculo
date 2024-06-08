@@ -14,11 +14,19 @@ public class LoginProcessServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(req.getParameter("username").equals("admin") && req.getParameter("password").equals("admin")) {
+            System.out.println("metodo post login");
             HttpSession session = req.getSession();
             session.setAttribute("authenticated", true);
             resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
         }else{
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getSession().getAttribute("authenticated") != null) {
+            resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
         }
     }
 }
