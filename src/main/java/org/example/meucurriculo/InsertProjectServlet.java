@@ -7,15 +7,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.example.meucurriculo.models.Project;
-import org.example.meucurriculo.repositoryimpl.ProjectRepositoryImpl;
 import org.example.meucurriculo.services.ProjectService;
 
 
 import java.io.IOException;
 
-@WebServlet("/insertProject") @ApplicationScoped
+@WebServlet("/insertProject")
 public class InsertProjectServlet extends HttpServlet {
 
 

@@ -16,7 +16,7 @@
 <body>
 
     <h1>Inserir projeto</h1>
-    <form action="/insertProject" method="post">
+    <form action="/insertProject" method="POST">
         <input type="text" name="nome">
         <input type="text" name="descricao">
         <button type="submit">Enviar</button>
@@ -29,7 +29,7 @@
         %>
     </form>
 
-    <form action="/formApresentation" method="post">
+    <form action="/formApresentation" method="POST">
         <input type="text" name="apresentacao">
         <button type="submit">Enviar</button>
     </form >
