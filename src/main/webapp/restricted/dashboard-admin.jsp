@@ -1,5 +1,6 @@
 <%@ page import="org.example.meucurriculo.services.HomePageService" %>
-<%@ page import="org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl" %><%--
+<%@ page import="org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl" %>
+<%@ page import="org.example.meucurriculo.models.HomePage" %><%--
   Created by IntelliJ IDEA.
   User: gabriel
   Date: 05/06/2024
@@ -30,7 +31,8 @@
 
     <form action="/formApresentation" method="post">
         <input type="text" name="apresentacao" value="<%
-        if(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao()!=null){
+        HomePage homePage = new HomePageRepositoryImpl().getHomePage("homePage");
+        if(homePage!=null && homePage.getApresentacao()!=null){
             out.print(new HomePageRepositoryImpl().getHomePage("homePage").getApresentacao());}
         else {
                 out.print("");
