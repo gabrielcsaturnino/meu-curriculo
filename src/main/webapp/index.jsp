@@ -5,7 +5,7 @@
     <%@ page import="org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl" %>
     <%@ page import="org.example.meucurriculo.models.HomePage" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Meu Portfólio - testing</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
