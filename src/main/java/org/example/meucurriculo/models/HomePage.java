@@ -4,19 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Getter @Setter
 public class HomePage implements Serializable {
-    public String apresentacao;
-    public String numero;
-    public String nome;
-    public String email;
+    private String apresentacao;
+    private String nome;
+    private String email;
+    private String rede_social;
+    private ArrayList<Project> list_project;
+
 
     public HomePage(){
     }
-    public HomePage(String apresentacao, String numero, String nome, String email) {
+    public HomePage(String apresentacao, String rede_social, String nome, String email){
         this.apresentacao = apresentacao;
-        this.numero = numero;
+        this.rede_social = rede_social;
         this.nome = nome;
         this.email = email;
     }

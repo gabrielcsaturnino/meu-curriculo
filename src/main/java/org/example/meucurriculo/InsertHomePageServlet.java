@@ -21,12 +21,14 @@ public class InsertHomePageServlet extends HttpServlet {
             System.out.println("entrou post if");
             homePageService = new HomePageService();
             String apresentacao = req.getParameter("apresentacao");
-            homePageService.saveHomePage(new HomePage(apresentacao));
-            System.out.println(req.getContextPath());
+            String nome = req.getParameter("nome");
+            String rede_social = req.getParameter("rede_social");
+            String email = req.getParameter("email");
+            homePageService.saveHomePage(new HomePage(apresentacao, rede_social, nome, email));
             resp.sendRedirect(req.getContextPath() + "/");
 
         }else{
-            System.out.println("DEU PAU");
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
         }
     }
 }

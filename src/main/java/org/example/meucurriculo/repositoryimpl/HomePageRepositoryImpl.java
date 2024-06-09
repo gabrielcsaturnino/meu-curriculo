@@ -30,7 +30,7 @@ public class HomePageRepositoryImpl implements HomePageRepository {
             if(homeJson != "" || homeJson != null) {
                 return objMapper.readValue(homeJson, HomePage.class);
             }else {
-                objMapper.readValue(homeJson, HomePage.class).setApresentacao("Apresentacao");
+                objMapper.readValue(homeJson, HomePage.class);
                 return objMapper.readValue(homeJson, HomePage.class);
             }
         }catch (Exception e){

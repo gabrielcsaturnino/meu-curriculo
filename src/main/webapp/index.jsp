@@ -13,6 +13,9 @@
         HomePageRepositoryImpl homePageRepository = new HomePageRepositoryImpl();
         HomePage homePage = homePageRepository.getHomePage("homePage");
         String apresentacao = homePage.getApresentacao();
+        String nome = homePage.getNome();
+        String email = homePage.getEmail();
+        String rede_social = homePage.getRede_social();        
     %>
 
     <style>
@@ -45,7 +48,7 @@
 <!-- Apresentação -->
 <section id="presentation" class="py-5">
     <div class="container">
-        <h1 class="text-center">Meu Currículo</h1>
+        <h1 class="text-center"><%out.print(nome);%></h1>
         <p class="lead text-center">
         <%out.print(apresentacao);%>
         </p>
@@ -87,9 +90,9 @@
 
 <section id="contacts" class="py-5">
     <div class="col-lg-8 col-md-6">
-        <p><strong>Email:</strong> email@example.com</p>
+        <p><strong>Email:</strong> <%out.print(email);%>></p>
         <p><strong>Telefone:</strong> (00) 1234-5678</p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/seuperfil" target="_blank">linkedin.com/in/seuperfil</a></p>
+        <p><strong>LinkedIn:</strong><%out.print(rede_social);%></p>
     </div>
 </section>
 

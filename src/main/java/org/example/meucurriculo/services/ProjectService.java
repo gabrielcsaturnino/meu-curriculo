@@ -1,7 +1,6 @@
 package org.example.meucurriculo.services;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+
 import org.example.meucurriculo.models.Project;
 import org.example.meucurriculo.repositoryimpl.ProjectRepositoryImpl;
 

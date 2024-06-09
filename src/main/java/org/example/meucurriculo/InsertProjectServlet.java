@@ -1,7 +1,6 @@
 package org.example.meucurriculo;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,8 +21,6 @@ public class InsertProjectServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-      System.out.println("entrou post");
         if(req.getSession().getAttribute("authenticated") != null) {
             projectService = new ProjectService();
 
@@ -42,9 +39,8 @@ public class InsertProjectServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
         }
 
-
-
+   
+     
 
     }
-
 }

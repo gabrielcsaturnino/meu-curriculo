@@ -17,6 +17,7 @@ public class LoginProcessServlet extends HttpServlet {
             System.out.println("metodo post login");
             HttpSession session = req.getSession();
             session.setAttribute("authenticated", true);
+            session.setMaxInactiveInterval(60);
             resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
         }else{
             resp.sendRedirect(req.getContextPath() + "/login.jsp");

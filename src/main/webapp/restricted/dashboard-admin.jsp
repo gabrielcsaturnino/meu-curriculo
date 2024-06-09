@@ -22,7 +22,10 @@
     </form>
 
     <form class="f" id="tt" action="/formApresentation" method="POST">
-        <input type="text" name="apresentacao">
+        <h2>apresentacao:</h2><input type="text" name="apresentacao"><br>
+        <h2>email:</h2><input type="text" name="email"><br>
+        <h2>linkedin:</h2><input type="text" name="rede_social"><br>
+        <h2>nome:</h2><input type="text" name="nome"><br>
         <button type="submit">Enviar</button>
     </form >
 
