@@ -12,6 +12,7 @@ import java.util.List;
 public class HomePageRepositoryImpl implements HomePageRepository {
     private static final ObjectMapper objMapper = new  ObjectMapper();
 
+
     @Override
     public void saveHomePage(HomePage homePage) {
         try (Jedis jedis = RedisUtil.getConnection()){

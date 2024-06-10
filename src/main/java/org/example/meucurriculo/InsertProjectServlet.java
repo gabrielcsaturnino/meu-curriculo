@@ -34,8 +34,6 @@ public class InsertProjectServlet extends HttpServlet {
                 req.getSession().setAttribute("error", "valor nulo");
                 resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
             }else {
-                //projectService.saveProject(new Project(id, nome, descricao));
-
 
                 HomePageService homePageService = new HomePageService();
                 homePageService.addProjectToHomePage("homePage", new Project(id, nome, descricao));

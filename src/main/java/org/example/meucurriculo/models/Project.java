@@ -19,8 +19,6 @@ public class Project implements Serializable{
        this.descricao = descricao;
     }
 
-    public Project(){}
-
     @Override
     public String toString() {
         return "Project{" +

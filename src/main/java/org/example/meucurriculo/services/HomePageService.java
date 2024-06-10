@@ -3,13 +3,14 @@ package org.example.meucurriculo.services;
 import org.example.meucurriculo.models.HomePage;
 import org.example.meucurriculo.models.Project;
 import org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl;
-import org.example.meucurriculo.repositoryimpl.ProjectRepositoryImpl;
 
 public class HomePageService {
     HomePageRepositoryImpl homePageRepositoryImpl;
+    ProjectService projectService;
 
     public HomePageService() {
         this.homePageRepositoryImpl = new HomePageRepositoryImpl();
+        this.projectService = new ProjectService();
     }
 
     public void saveHomePage(HomePage homePage){
