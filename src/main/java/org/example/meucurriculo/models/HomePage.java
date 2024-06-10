@@ -12,7 +12,7 @@ public class HomePage implements Serializable {
     private String nome;
     private String email;
     private String rede_social;
-    private ArrayList<Project> list_project;
+    private ArrayList<Project> list_project = new ArrayList<>();
 
 
     public HomePage(){
