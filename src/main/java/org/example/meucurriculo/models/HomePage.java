@@ -25,7 +25,6 @@ public class HomePage implements Serializable {
     }
 
     public void addProject(Project project){
-        System.out.printf(project.toString());
         list_project.add(project);
     }
 
