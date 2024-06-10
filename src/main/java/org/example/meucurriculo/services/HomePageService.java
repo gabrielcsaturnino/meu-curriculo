@@ -1,24 +1,33 @@
 package org.example.meucurriculo.services;
 
 import org.example.meucurriculo.models.HomePage;
+import org.example.meucurriculo.models.Project;
 import org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl;
 import org.example.meucurriculo.repositoryimpl.ProjectRepositoryImpl;
 
 public class HomePageService {
     HomePageRepositoryImpl homePageRepositoryImpl;
 
+    public HomePageService() {
+        this.homePageRepositoryImpl = new HomePageRepositoryImpl();
+    }
+
     public void saveHomePage(HomePage homePage){
-        homePageRepositoryImpl = new HomePageRepositoryImpl();
         homePageRepositoryImpl.saveHomePage(homePage);
     }
 
     public HomePage getHomePage(String id){
-        homePageRepositoryImpl = new HomePageRepositoryImpl();
-        if(homePageRepositoryImpl.getHomePage(id) != null){
-            return homePageRepositoryImpl.getHomePage(id);
-        }else {
-            saveHomePage(new HomePage("Apresentacao", "rede_social", "nome", "email" ));
-            return homePageRepositoryImpl.getHomePage(id);
+        HomePage homePage = homePageRepositoryImpl.getHomePage(id);
+        if(homePage == null){
+            homePage = new HomePage("Apresentacao", "rede_social", "nome", "email");
+            saveHomePage(homePage);
         }
+        return homePage;
+    }
+
+    public void addProjectToHomePage(String id, Project project){
+        HomePage homePage = getHomePage(id);
+        homePage.addProject(project);
+        saveHomePage(homePage);
     }
 }
