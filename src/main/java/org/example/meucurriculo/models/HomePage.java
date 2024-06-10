@@ -24,7 +24,17 @@ public class HomePage implements Serializable {
         this.email = email;
     }
 
-    public HomePage(String apresentacao){
-        this.apresentacao = apresentacao;
+    public void addProject(Project project){
+        list_project.add(project);
+    }
+
+    public void getProject(){
+        if(list_project.size() > 0){
+            for(Project p : list_project){
+                System.out.println(p);
+            }
+        }else{
+            System.out.println("Nenhum project encontrado");
+        }
     }
 }

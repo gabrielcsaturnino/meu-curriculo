@@ -21,8 +21,11 @@ public class Project implements Serializable{
 
     public Project(){}
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Project{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
 }

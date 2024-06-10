@@ -52,6 +52,7 @@
         <h1 class="text-center"><%out.print(nome);%></h1>
         <p class="lead text-center">
         <%out.print(apresentacao);%>
+        <%homePage.getList_project();%>
         </p>
         <div class="row">
             <div class="col-lg-4 col-md-6">

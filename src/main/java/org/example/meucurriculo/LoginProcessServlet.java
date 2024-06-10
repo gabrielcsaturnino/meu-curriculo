@@ -14,7 +14,6 @@ public class LoginProcessServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(req.getParameter("username").equals("admin") && req.getParameter("password").equals("admin")) {
-            System.out.println("metodo post login");
             HttpSession session = req.getSession();
             session.setAttribute("authenticated", true);
             session.setMaxInactiveInterval(60);

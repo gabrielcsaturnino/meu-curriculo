@@ -19,7 +19,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     @Override
     public void saveProject(Project project) {
 
-        try(Jedis jedis = new RedisUtil().getConnection()){
+        try(Jedis jedis = RedisUtil.getConnection()){
             String projectJson = objMapper.writeValueAsString(project);
             jedis.set(project.getId(), projectJson);
         } catch (JsonProcessingException e) {
@@ -29,7 +29,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 
     @Override
     public Project getProject(String id) {
-        try(Jedis jedis = new RedisUtil().getConnection()){
+        try(Jedis jedis = RedisUtil.getConnection()){
             String projectJson = jedis.get(id);
             if(projectJson != null) {
                 return objMapper.readValue(projectJson, Project.class);
