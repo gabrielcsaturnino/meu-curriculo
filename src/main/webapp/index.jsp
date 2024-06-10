@@ -2,20 +2,21 @@
 <html lang="pt-br">
 <head>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <%@ page import="org.example.meucurriculo.repositoryimpl.HomePageRepositoryImpl" %>
     <%@ page import="org.example.meucurriculo.models.HomePage" %>
+    <%@ page import="org.example.meucurriculo.services.HomePageService" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio - testing</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <%
-        HomePageRepositoryImpl homePageRepository = new HomePageRepositoryImpl();
-        HomePage homePage = homePageRepository.getHomePage("homePage");
+        HomePageService homePageService = new HomePageService();
+
+        HomePage homePage = homePageService.getHomePage("homePage");
         String apresentacao = homePage.getApresentacao();
         String nome = homePage.getNome();
         String email = homePage.getEmail();
-        String rede_social = homePage.getRede_social();        
+        String rede_social = homePage.getRede_social();
     %>
 
     <style>

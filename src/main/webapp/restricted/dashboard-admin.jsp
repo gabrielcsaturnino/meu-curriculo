@@ -9,7 +9,7 @@
 
     <h1>Inserir projeto</h1>
     <form class="f" id="t" action="/insertProject" method="POST">
-        <input type="text" name="nome">
+        <input type="text" name="nome"><br>
         <input type="text" name="descricao">
         <button type="submit">Enviar</button>
         <%

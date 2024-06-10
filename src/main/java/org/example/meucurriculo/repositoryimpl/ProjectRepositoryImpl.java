@@ -34,7 +34,6 @@ public class ProjectRepositoryImpl implements ProjectRepository {
             if(projectJson != null) {
                 return objMapper.readValue(projectJson, Project.class);
             }
-
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -6,12 +6,12 @@ import org.example.meucurriculo.repositoryimpl.ProjectRepositoryImpl;
 
 
 public class ProjectService {
-    ProjectRepositoryImpl projectRepository;
+    ProjectRepositoryImpl projectRepositoryImpl;
 
 
     public void saveProject(Project project){
-        projectRepository = new ProjectRepositoryImpl();
-        projectRepository.saveProject(checkNameLength(project));
+        projectRepositoryImpl = new ProjectRepositoryImpl();
+        projectRepositoryImpl.saveProject(checkNameLength(project));
 
     }
 
@@ -21,6 +21,15 @@ public class ProjectService {
         }else {
             project.setNome(project.getNome().substring(0, 254));
             return project;
+        }
+    }
+
+    public Project getProject(String id) {
+        if (projectRepositoryImpl.getProject(id) != null) {
+            return projectRepositoryImpl.getProject(id);
+        }else {
+            saveProject(new Project("1", "nome", "descricao"));
+            return projectRepositoryImpl.getProject(id);
         }
     }
 }
