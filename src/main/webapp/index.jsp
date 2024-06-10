@@ -13,6 +13,7 @@
         HomePageService homePageService = new HomePageService();
 
         HomePage homePage = homePageService.getHomePage("homePage");
+        homePage.getProject();
         String apresentacao = homePage.getApresentacao();
         String nome = homePage.getNome();
         String email = homePage.getEmail();
@@ -52,7 +53,7 @@
         <h1 class="text-center"><%out.print(nome);%></h1>
         <p class="lead text-center">
         <%out.print(apresentacao);%>
-        <%homePage.getProject();%>
+
         </p>
         <div class="row">
             <div class="col-lg-4 col-md-6">
