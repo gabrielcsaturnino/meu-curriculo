@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class Project implements Serializable{
+public class Project{
 
     private String id;
     private String nome;
