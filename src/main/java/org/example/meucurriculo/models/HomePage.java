@@ -30,12 +30,8 @@ public class HomePage implements Serializable {
     }
 
     public void getProject(){
-        if(!list_project.isEmpty()){
             for(Project p : list_project){
                 System.out.println(p);
             }
-        }else{
-            System.out.println("Nenhum project encontrado");
-        }
-    }
+     }
 }

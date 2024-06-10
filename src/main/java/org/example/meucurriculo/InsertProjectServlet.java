@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.meucurriculo.models.HomePage;
 import org.example.meucurriculo.models.Project;
 import org.example.meucurriculo.services.HomePageService;
 import org.example.meucurriculo.services.ProjectService;
@@ -37,10 +38,10 @@ public class InsertProjectServlet extends HttpServlet {
 
 
                 HomePageService homePageService = new HomePageService();
-
-                homePageService.getHomePage("homePage").addProject(new Project(id, nome, descricao));
-                homePageService.saveHomePage(homePageService.getHomePage("homePage"));
-                homePageService.getHomePage("homePage").getProject();
+                HomePage homePage = new HomePageService().getHomePage("homePage");
+                homePage.addProject(new Project(id, nome, descricao));
+                homePageService.saveHomePage(homePage);
+                homePage.getProject();
                 resp.sendRedirect(req.getContextPath() + "/");
             }
         }else {
