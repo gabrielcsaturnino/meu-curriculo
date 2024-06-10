@@ -25,6 +25,7 @@ public class InsertHomePageServlet extends HttpServlet {
             String rede_social = req.getParameter("rede_social");
             String email = req.getParameter("email");
             homePageService.saveHomePage(new HomePage(apresentacao, rede_social, nome, email));
+
             resp.sendRedirect(req.getContextPath() + "/");
 
         }else{
