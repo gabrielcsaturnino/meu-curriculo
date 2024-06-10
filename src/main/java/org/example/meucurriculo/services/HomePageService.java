@@ -13,6 +13,7 @@ public class HomePageService {
     }
 
     public HomePage getHomePage(String id){
+        homePageRepositoryImpl = new HomePageRepositoryImpl();
         if(homePageRepositoryImpl.getHomePage(id) != null){
             return homePageRepositoryImpl.getHomePage(id);
         }else {
