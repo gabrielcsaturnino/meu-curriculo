@@ -10,7 +10,6 @@ public class HomePageService {
 
     public HomePageService() {
         this.homePageRepositoryImpl = new HomePageRepositoryImpl();
-        this.projectService = new ProjectService();
     }
 
     public void saveHomePage(HomePage homePage){

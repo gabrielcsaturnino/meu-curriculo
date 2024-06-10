@@ -18,14 +18,9 @@ import java.io.IOException;
 public class InsertProjectServlet extends HttpServlet {
 
 
-
-    ProjectService projectService;
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(req.getSession().getAttribute("authenticated") != null) {
-            projectService = new ProjectService();
-
             String id = "1";
             String nome =  req.getParameter("nome");
             String descricao = req.getParameter("descricao");
@@ -34,11 +29,9 @@ public class InsertProjectServlet extends HttpServlet {
                 req.getSession().setAttribute("error", "valor nulo");
                 resp.sendRedirect(req.getContextPath() + "/restricted/dashboard-admin.jsp");
             }else {
-
                 HomePageService homePageService = new HomePageService();
                 homePageService.addProjectToHomePage("homePage", new Project(id, nome, descricao));
                 homePageService.getHomePage("homePage").getProject();
-
                 resp.sendRedirect(req.getContextPath() + "/");
             }
         }else {

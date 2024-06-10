@@ -16,9 +16,9 @@ public class InsertHomePageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("entrou post");
+
         if(req.getSession().getAttribute("authenticated") !=null){
-            System.out.println("entrou post if");
+
             homePageService = new HomePageService();
             String apresentacao = req.getParameter("apresentacao");
             String nome = req.getParameter("nome");
