@@ -30,7 +30,7 @@ public class HomePage implements Serializable {
 
     public void getProject(){
             for(Project p : list_project){
-                System.out.println(p);
+                System.out.println("list:"+p);
             }
      }
 }
