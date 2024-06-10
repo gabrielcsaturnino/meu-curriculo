@@ -24,7 +24,7 @@ public class HomePage implements Serializable {
         this.email = email;
     }
 
-    public void addProject(Project project){
+    public void addProject(Project project) {
         list_project.add(project);
     }
 
