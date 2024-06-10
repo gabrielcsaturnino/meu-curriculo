@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class Project{
+public class Project implements Serializable{
 
     private String id;
     private String nome;
@@ -18,6 +18,8 @@ public class Project{
        this.nome = nome;
        this.descricao = descricao;
     }
+
+    public Project(){}
 
     @Override
     public String toString() {
