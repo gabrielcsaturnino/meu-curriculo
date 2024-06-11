@@ -16,7 +16,7 @@ public class ReturnProjectServlet extends HttpServlet {
      HomePageService homePageService = new HomePageService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Project> projectList = homePageService.getHomePage("homePage").getList_project();
+        ArrayList<Project> projectList = homePageService.getHomePage("homePage").getProject();
         req.setAttribute("projectList", projectList);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
