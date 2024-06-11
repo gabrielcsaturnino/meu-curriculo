@@ -28,9 +28,7 @@ public class HomePage implements Serializable {
         list_project.add(project);
     }
 
-    public void getProject(){
-            for(Project p : list_project){
-                System.out.println("list:"+p);
-            }
+    public ArrayList<Project> getProject(){
+        return this.list_project;
      }
 }
