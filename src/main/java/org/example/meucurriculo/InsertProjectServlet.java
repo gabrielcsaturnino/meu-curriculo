@@ -31,7 +31,6 @@ public class InsertProjectServlet extends HttpServlet {
             }else {
                 HomePageService homePageService = new HomePageService();
                 homePageService.addProjectToHomePage("homePage", new Project(id, nome, descricao));
-                homePageService.getHomePage("homePage").getProject();
                 resp.sendRedirect(req.getContextPath() + "/");
             }
         }else {
