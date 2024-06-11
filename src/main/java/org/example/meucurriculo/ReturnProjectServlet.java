@@ -9,13 +9,15 @@ import org.example.meucurriculo.services.HomePageService;
 import org.example.meucurriculo.services.ProjectService;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class ReturnProjectServlet extends HttpServlet {
      HomePageService homePageService = new HomePageService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Project> projectList = homePageService.getHomePage("homePage").getList_project();
+        ArrayList<Project> projectList = homePageService.getHomePage("homePage").getList_project();
+        System.out.println(projectList);
         req.setAttribute("projectList", projectList);
         req.getRequestDispatcher(req.getContextPath() + "/").forward(req, resp);
     }
