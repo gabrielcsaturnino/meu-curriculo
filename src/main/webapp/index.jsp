@@ -80,7 +80,7 @@
             <div class="col-md-4 project-card" data-tech="Java">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">${projectList.nome}</h5>
+                        <h5 class="card-title"><c:out value="${projectList.nome}"/></h5>
                         <p class="card-text">Descrição: ${projectList.descricao}. Tecnologia: Java</p>
                     </div>
                 </div>
