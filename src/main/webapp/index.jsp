@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ page import="org.example.meucurriculo.models.HomePage" %>
     <%@ page import="org.example.meucurriculo.services.HomePageService" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meu Portfólio - testing</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -72,20 +74,21 @@
             <button class="btn btn-success filter-btn" onclick="filterProjects('JavaScript')">JavaScript</button>
             <button class="btn btn-info filter-btn" onclick="filterProjects('Python')">Python</button>
         </div>
+        <div class="container>">
         <div class="row" id="project-cards">
-            <!-- Projetos serão inseridos aqui -->
-            <%-- Este é um exemplo de cartão de projeto --%>
+            <c:forEach var="projectList"  items="${project}">
             <div class="col-md-4 project-card" data-tech="Java">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Projeto 1</h5>
-                        <p class="card-text">Descrição do projeto 1. Tecnologia: Java</p>
-                        <a href="project.jsp?id=1" class="btn btn-primary">Ver Mais</a>
+                        <h5 class="card-title">${projectList.nome}</h5>
+                        <p class="card-text">Descrição: ${projectList.descricao}. Tecnologia: Java</p>
                     </div>
                 </div>
             </div>
+            </c:forEach>
             <%-- Adicione mais cartões de projetos aqui --%>
-        </div>
+         </div>
+      </div>
     </div>
 </section>
 
