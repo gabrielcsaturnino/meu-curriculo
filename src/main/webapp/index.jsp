@@ -76,7 +76,7 @@
         </div>
         <div class="container>">
         <div class="row" id="project-cards">
-            <c:forEach var="projectList"  items="${project}">
+            <c:forEach var="projectList"  items="${projectList}">
             <div class="col-md-4 project-card" data-tech="Java">
                 <div class="card">
                     <div class="card-body">
