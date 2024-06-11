@@ -13,9 +13,10 @@ import java.util.ArrayList;
 
 
 public class ReturnProjectServlet extends HttpServlet {
-     HomePageService homePageService = new HomePageService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HomePageService homePageService = new HomePageService();
         ArrayList<Project> projectList = homePageService.getHomePage("homePage").getProject();
         req.setAttribute("projectList", projectList);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
