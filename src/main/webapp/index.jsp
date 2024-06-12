@@ -85,8 +85,8 @@
             <div class="col-md-4 project-card" data-tech="Java">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><%p.getNome();%></h5>
-                        <p class="card-text">Descrição: <%p.getDescricao();%>. Tecnologia: Java</p>
+                        <h5 class="card-title"><%out.print(p.getNome());%></h5>
+                        <p class="card-text">Descrição: <%out.print(p.getDescricao());%>. Tecnologia: Java</p>
                     </div>
                 </div>
             </div>
