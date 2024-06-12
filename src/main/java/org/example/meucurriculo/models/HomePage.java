@@ -28,7 +28,5 @@ public class HomePage implements Serializable {
         list_project.add(project);
     }
 
-    public ArrayList<Project> getProject(){
-        return this.list_project;
-     }
+
 }
