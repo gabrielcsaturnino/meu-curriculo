@@ -80,16 +80,6 @@
             cursor: pointer;
         }
 
-        .modal-content.no-blur {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-
-
     </style>
 </head>
 
@@ -98,7 +88,7 @@
     <div class="container">
         <h1 class="text-center"><%out.print(nome);%></h1>
         <p class="lead text-center">
-        <%out.print(apresentacao);%>
+            <%out.print(apresentacao);%>
 
         </p>
         <div class="row">
@@ -120,23 +110,23 @@
             <button class="btn btn-info filter-btn" onclick="filterProjects('Python')">Python</button>
         </div>
         <div class="container>">
-        <div class="row" id="project-cards">
-            <%
-                ArrayList<Project> list = homePage.getList_project();
-                for (Project p : list) {
-            %>
-            <div class="col-md-4 project-card" data-tech="Java">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><%out.print(p.getNome());%></h5>
-                        <p class="card-text">Descrição: <%out.print(p.getDescricao());%>. Tecnologia: Java</p>
+            <div class="row" id="project-cards">
+                <%
+                    ArrayList<Project> list = homePage.getList_project();
+                    for (Project p : list) {
+                %>
+                <div class="col-md-4 project-card" data-tech="Java">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%out.print(p.getNome());%></h5>
+                            <p class="card-text">Descrição: <%out.print(p.getDescricao());%>. Tecnologia: Java</p>
+                        </div>
                     </div>
                 </div>
+                <%}%>
+                <%-- Adicione mais cartões de projetos aqui --%>
             </div>
-            <%}%>
-            <%-- Adicione mais cartões de projetos aqui --%>
-         </div>
-      </div>
+        </div>
     </div>
 </section>
 
@@ -163,10 +153,7 @@
     }
 </script>
 
-
-
 <div id="projectModal" class="modal">
-
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2 id="modalProjectTitle"></h2>
@@ -176,10 +163,9 @@
 </div>
 
 <script>
-    // Obtém a referência para a janela sobreposta, o botão de fechar e a modal-content
+    // Obtém a referência para a janela sobreposta e o botão de fechar
     var modal = document.getElementById("projectModal");
     var closeButton = document.getElementsByClassName("close")[0];
-    var modalContent = document.querySelector(".modal-content");
 
     // Adiciona um ouvinte de eventos de clique em cada projeto
     var projectCards = document.getElementsByClassName("project-card");
@@ -195,12 +181,6 @@
             // Atualiza a janela modal com as informações do projeto clicado
             document.getElementById("modalProjectTitle").innerText = projectName;
             document.getElementById("modalProjectDescription").innerText = projectDescription;
-
-            // Desfoca o fundo
-            document.body.style.filter = "blur(5px)";
-
-            // Remove a classe no-blur da modal-content
-            modalContent.classList.remove("no-blur");
         });
     }
 
@@ -208,12 +188,6 @@
     closeButton.addEventListener("click", function() {
         // Fecha a janela sobreposta
         modal.style.display = "none";
-
-        // Remove o desfoque do fundo
-        document.body.style.filter = "none";
-
-        // Adiciona a classe no-blur à modal-content quando a janela modal é fechada
-        modalContent.classList.add("no-blur");
     });
 
 </script>
