@@ -176,9 +176,10 @@
 </div>
 
 <script>
-    // Obtém a referência para a janela sobreposta e o botão de fechar
+    // Obtém a referência para a janela sobreposta, o botão de fechar e a modal-content
     var modal = document.getElementById("projectModal");
     var closeButton = document.getElementsByClassName("close")[0];
+    var modalContent = document.querySelector(".modal-content");
 
     // Adiciona um ouvinte de eventos de clique em cada projeto
     var projectCards = document.getElementsByClassName("project-card");
