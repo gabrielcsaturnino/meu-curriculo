@@ -5,6 +5,8 @@
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ page import="org.example.meucurriculo.models.HomePage" %>
     <%@ page import="org.example.meucurriculo.services.HomePageService" %>
+    <%@ page import="java.util.ArrayList" %>
+    <%@ page import="org.example.meucurriculo.models.Project" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Meu Portfólio - testing</title>
@@ -76,16 +78,19 @@
         </div>
         <div class="container>">
         <div class="row" id="project-cards">
-            <c:forEach var="projectList"  items="${projectList}">
+            <%
+                ArrayList<Project> list = (ArrayList<Project>) request.getAttribute("projectList");
+                for (Project p : list) {
+            %>
             <div class="col-md-4 project-card" data-tech="Java">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><${projectList.nome}</h5>
-                        <p class="card-text">Descrição: ${projectList.descricao}. Tecnologia: Java</p>
+                        <h5 class="card-title"><%p.getNome();%></h5>
+                        <p class="card-text">Descrição: <%p.getDescricao();%>. Tecnologia: Java</p>
                     </div>
                 </div>
             </div>
-            </c:forEach>
+            <%}%>
             <%-- Adicione mais cartões de projetos aqui --%>
          </div>
       </div>
