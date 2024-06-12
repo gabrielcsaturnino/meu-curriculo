@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebServlet("/formApresentation")
 public class InsertHomePageServlet extends HttpServlet {
     HomePageService homePageService;
-
+    HomePage homePage;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,8 +24,16 @@ public class InsertHomePageServlet extends HttpServlet {
             String nome = req.getParameter("nome");
             String rede_social = req.getParameter("rede_social");
             String email = req.getParameter("email");
-            homePageService.saveHomePage(new HomePage(apresentacao, rede_social, nome, email));
-
+            if(homePageService.getHomePage("homePage") != null) {
+                homePage.setApresentacao(apresentacao);
+                homePage.setNome(nome);
+                homePage.setRede_social(rede_social);
+                homePage.setEmail(email);
+                homePage.setList_project(homePageService.getHomePage("homePage").getList_project());
+                homePageService.saveHomePage(homePage);
+            }else {
+                homePageService.saveHomePage(new HomePage(apresentacao, rede_social, nome, email));
+            }
             resp.sendRedirect(req.getContextPath() + "/");
 
         }else{
