@@ -19,6 +19,6 @@ public class ReturnProjectServlet extends HttpServlet {
         HomePageService homePageService = new HomePageService();
         ArrayList<Project> projectList = homePageService.getHomePage("homePage").getList_project();
         req.setAttribute("projectList", projectList);
-        req.getRequestDispatcher("/webapp/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
