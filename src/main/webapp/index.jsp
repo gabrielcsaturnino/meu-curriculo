@@ -46,6 +46,40 @@
             font-family: "BitstreamVeraSansMono Nerd Font";
             color: coral;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -119,6 +153,53 @@
         });
     }
 </script>
+
+<script>
+    // Obtém a referência para a janela sobreposta e o botão de fechar
+    var modal = document.getElementById("projectModal");
+    var closeButton = document.getElementsByClassName("close")[0];
+
+    // Adiciona um ouvinte de eventos de clique em cada projeto
+    var projectCards = document.getElementsByClassName("project-card");
+    for (var i = 0; i < projectCards.length; i++) {
+        projectCards[i].addEventListener("click", function() {
+            // Exibe a janela sobreposta
+            modal.style.display = "block";
+
+            // Atualiza o título e a descrição do projeto na janela sobreposta
+            var projectName = this.querySelector(".card-title").innerText;
+            var projectDescription = this.querySelector(".card-text").innerText;
+            document.getElementById("modalProjectTitle").innerText = projectName;
+            document.getElementById("modalProjectDescription").innerText = projectDescription;
+
+            // Desfoca o fundo
+            document.body.style.filter = "blur(5px)";
+        });
+    }
+
+    // Adiciona um ouvinte de eventos de clique no botão de fechar
+    closeButton.addEventListener("click", function() {
+        // Fecha a janela sobreposta
+        modal.style.display = "none";
+
+        // Remove o desfoque do fundo
+        document.body.style.filter = "none";
+    });
+
+
+</script>
+
+
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalProjectTitle"></h2>
+        <p id="modalProjectDescription"></p>
+        <!-- Adicione aqui outras informações do projeto que deseja exibir -->
+    </div>
+</div>
+
 
 
 </body>
