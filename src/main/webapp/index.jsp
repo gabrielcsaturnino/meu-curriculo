@@ -80,6 +80,15 @@
             cursor: pointer;
         }
 
+        .modal-content.no-blur {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+
 
     </style>
 </head>
@@ -188,18 +197,23 @@
 
             // Desfoca o fundo
             document.body.style.filter = "blur(5px)";
+
+            // Remove a classe no-blur da modal-content
+            modalContent.classList.remove("no-blur");
         });
     }
+
     // Adiciona um ouvinte de eventos de clique no botão de fechar
     closeButton.addEventListener("click", function() {
-            // Fecha a janela sobreposta
-            modal.style.display = "none";
+        // Fecha a janela sobreposta
+        modal.style.display = "none";
 
-            // Remove o desfoque do fundo
-            document.body.style.filter = "none";
-        }
-    );
+        // Remove o desfoque do fundo
+        document.body.style.filter = "none";
 
+        // Adiciona a classe no-blur à modal-content quando a janela modal é fechada
+        modalContent.classList.add("no-blur");
+    });
 
 </script>
 
