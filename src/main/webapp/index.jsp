@@ -164,7 +164,7 @@
         <span class="close">&times;</span>
         <h2 id="modalProjectTitle"></h2>
         <p id="modalProjectDescription"></p>
-        <h1>TESTE:<%%></h1>
+        <h1>TESTE:</h1>
     </div>
 </div>
 
