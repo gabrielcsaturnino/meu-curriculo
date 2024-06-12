@@ -156,8 +156,6 @@
 
 
 
-
-
 <div id="projectModal" class="modal">
 
     <div class="modal-content">
@@ -180,9 +178,11 @@
             // Exibe a janela sobreposta
             modal.style.display = "block";
 
-            // Atualiza o título e a descrição do projeto na janela sobreposta
+            // Obtém informações do projeto clicado
             var projectName = this.querySelector(".card-title").innerText;
             var projectDescription = this.querySelector(".card-text").innerText;
+
+            // Atualiza a janela modal com as informações do projeto clicado
             document.getElementById("modalProjectTitle").innerText = projectName;
             document.getElementById("modalProjectDescription").innerText = projectDescription;
 
@@ -190,15 +190,15 @@
             document.body.style.filter = "blur(5px)";
         });
     }
-
     // Adiciona um ouvinte de eventos de clique no botão de fechar
     closeButton.addEventListener("click", function() {
-        // Fecha a janela sobreposta
-        modal.style.display = "none";
+            // Fecha a janela sobreposta
+            modal.style.display = "none";
 
-        // Remove o desfoque do fundo
-        document.body.style.filter = "none";
-    });
+            // Remove o desfoque do fundo
+            document.body.style.filter = "none";
+        }
+    );
 
 
 </script>
