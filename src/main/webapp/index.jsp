@@ -79,7 +79,7 @@
         <div class="container>">
         <div class="row" id="project-cards">
             <%
-                ArrayList<Project> list = (ArrayList<Project>) request.getAttribute("projectList");
+                ArrayList<Project> list = homePage.getList_project();
                 for (Project p : list) {
             %>
             <div class="col-md-4 project-card" data-tech="Java">
