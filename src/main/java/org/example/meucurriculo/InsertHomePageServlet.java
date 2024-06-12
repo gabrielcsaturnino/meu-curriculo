@@ -25,6 +25,7 @@ public class InsertHomePageServlet extends HttpServlet {
             String rede_social = req.getParameter("rede_social");
             String email = req.getParameter("email");
             if(homePageService.getHomePage("homePage") != null) {
+                homePage = homePageService.getHomePage("homePage");
                 homePage.setApresentacao(apresentacao);
                 homePage.setNome(nome);
                 homePage.setRede_social(rede_social);
